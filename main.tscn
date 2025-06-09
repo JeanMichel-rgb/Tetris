@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4dhr4lwmmo8p"]
+
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_gs6fb"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_gs6fb")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score : 99999"
+
+[node name="NextPieceMenu" type="Control" parent="HUD"]
+anchors_preset = 0
+offset_top = 30.0
+offset_right = 40.0
+offset_bottom = 70.0
+
+[node name="NextPieceBackGround" type="ColorRect" parent="HUD/NextPieceMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
