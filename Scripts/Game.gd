@@ -1,5 +1,8 @@
 extends Node
 
+@export var BlockScale : float
+@export var BoardWidth : int
+@export var BoardHeight : int
 var speed_boost : float = 5
 var Score : int = 0
 var SpawnPlace : Vector2 = Vector2(4, 2)
@@ -10,12 +13,9 @@ var NextShape : Array
 var current_collision : Array
 var NextCollision : Array
 var GameSpeed : float = .5
-const BlockScale : float = 40
 var time : float = 0.0
 var time2 : float = 0.0
-var UpLeft_GameCorner : Vector2 = Vector2(7, 1)
-var BoardWidth : int = 10
-var BoardHeight : int = 20
+var UpLeft_GameCorner : Vector2 = Vector2(1, 1)
 var Game : bool = false
 var Xdir : int
 var Ydir : int
@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 		Xdir = Input.get_axis("ui_left", "ui_right")
 		rotate = Input.get_axis("ui_up", "ui_down")*90
 		if current_piece.move_and_collide(Vector2(Xdir*BlockScale, 0), true) : Xdir = 0
-		Ydir = 1-abs(Xdir)
+		Ydir = 1#-abs(Xdir)
 		if time2 >= .1:
 			time2 = 0.0
 			current_piece.position.x += Xdir*BlockScale
