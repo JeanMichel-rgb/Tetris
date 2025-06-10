@@ -4,9 +4,10 @@
 
 [node name="main" type="Node"]
 script = ExtResource("1_gs6fb")
-BlockScale = 40.0
+BlockScale = 30.0
 BoardWidth = 10
 BoardHeight = 20
+UpLeft_GameCorner = Vector2(5, 1)
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3

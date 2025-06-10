@@ -3,6 +3,7 @@ extends Node
 @export var BlockScale : float
 @export var BoardWidth : int
 @export var BoardHeight : int
+@export var UpLeft_GameCorner : Vector2 = Vector2(2, 1)
 var speed_boost : float = 5
 var Score : int = 0
 var SpawnPlace : Vector2 = Vector2(4, 2)
@@ -15,7 +16,6 @@ var NextCollision : Array
 var GameSpeed : float = .5
 var time : float = 0.0
 var time2 : float = 0.0
-var UpLeft_GameCorner : Vector2 = Vector2(1, 1)
 var Game : bool = false
 var Xdir : int
 var Ydir : int
@@ -77,7 +77,6 @@ func RotatePiece(rotation):
 	rotation = deg_to_rad(rotation)
 	current_piece.rotate(rotation)
 	if current_piece.move_and_collide(Vector2.ZERO, false) : current_piece.position = pos ; current_piece.rotation = ro ;
-	elif rotation != 0 : Ydir = 0
 	if time >= GameSpeed:
 		time = 0.0
 		MovePiece(Ydir*BlockScale)
